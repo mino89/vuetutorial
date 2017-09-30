@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <!-- Compiled and minified CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+        <link rel="stylesheet"  href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+
+        
+        
+        
+        <!-- Compiled and minified JavaScript -->
+        <script src="https://unpkg.com/vue"></script>
+
+        <style>
+            section {
+                padding: 1em 0;
+            }
+        </style>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+            <header>
+                    <nav>
+                            <div class="nav-wrapper">
+                              <a href="#" class="brand-logo">Esempi vue.js</a>
+                              <!--<ul id="nav-mobile" class="right hide-on-med-and-down">
+                                <li><a href="sass.html">Sass</a></li>
+                                <li><a href="badges.html">Components</a></li>
+                                <li><a href="collapsible.html">JavaScript</a></li>
+                              </ul>-->
+                            </div>
+                          </nav>
+            </header>
+            <main class="container">
+                <section>
+                    <div id="app">
+                        <h1>Esempio Base</h1>
+                        {{message}}
+                    </div>
+                    <script>
+                        var app = new Vue({
+                            el:'#app',
+                            data:{
+                                message: 'Hello Vue!'
+                            }
+                        })
+                    </script>
+                </section>
+                <section>
+                    <div id="app-2">
+                        <h1>Esempio binding</h1>
+                        <span v-bind:title="message">
+                            Metti su il mouse e vedi il il titolo bindato!!!
+                        </span>
+                    </div>
+                    <script>
+                        var app2 = new Vue({
+                            el:'#app-2',
+                            data:{
+                            message: 'hai caricato questa pagina il' + new Date().toLocaleDateString()
+                            }
+                        })
+                    </script>
+                </section>
+                <section>
+                    <div id="app-3">
+                        <h1>Esempio if</h1>
+                        <p v-if="seen">Ora mi vedi</p>
+                    </div>
+                    <script>
+                        var app3 = new Vue({
+                            el:'#app-3',
+                            data:{
+                                seen: true
+                            }
+                        })
+                    </script>
+                </section>
+                <section>
+                    <div id="app-4">
+                        <h1>Esempio For</h1>
+                        <ol>
+                            <li v-for="todo in todos">
+                                {{todo.text}}
+                            </li>
+                        </ol>
+                    </div>
+                    <script>
+                        var app4 = new Vue({
+                            el:'#app-4',
+                            data:{
+                                todos:[
+                                    {text:'Impara il javascript!'},
+                                    {text:'Impara Vue'},
+                                    {text:'Costruisci qualcosa di spettacolare'},
+                                ]
+                            }
+                        })
+                    </script>
+                </section>
+                <section>
+                    <div id="app-5">
+                        <h1>Event listeners</h1>
+                        <p>{{message}}</p>
+                        <button v-on:click="reverseMessage">Inverti Testo</button>
+                    </div>
+                    <script>
+                        var app5 = new Vue({
+                            el:'#app-5',
+                            data:{
+                                message: 'Ciao vue.js'
+                            },
+                            methods:{
+                                reverseMessage:function(){
+                                    this.message = this.message.split('').reverse().join('')
+                                }
+                            }
+                        })
+                    </script>
+                </section>
+            </main>
+            <footer>
+
+            </footer>
+
+    </body>
+</html>
