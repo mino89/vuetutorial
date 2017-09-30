@@ -2,7 +2,7 @@
 Just a repository for vue.js functionalities learning
 
 ## getting started 
-If you haven't yarn installed, you can get from (here)[https://yarnpkg.com/en/docs/install]
+If you haven't yarn installed, you can get from [here](https://yarnpkg.com/en/docs/install)
 
 Next install dependencies
 
@@ -26,5 +26,5 @@ Go to your project root and run *serve* command
     serve --addr localhost
 
 You will reach your project at http://localhost:8080
-For more details check (here)[https://yarnpkg.com/en/package/node-serve]
+For more details check [here](https://yarnpkg.com/en/package/node-serve)
     
