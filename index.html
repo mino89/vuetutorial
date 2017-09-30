@@ -12,12 +12,6 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
         <link rel="stylesheet"  href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
 
-        
-        
-        
-        <!-- Compiled and minified JavaScript -->
-        <script src="https://unpkg.com/vue"></script>
-
         <style>
             section {
                 padding: 1em 0;
@@ -45,15 +39,7 @@
                     <div id="app">
                         <h1>Esempio Base</h1>
                         {{message}}
-                    </div>
-                    <script>
-                        var app = new Vue({
-                            el:'#app',
-                            data:{
-                                message: 'Hello Vue!'
-                            }
-                        })
-                    </script>
+                    </div>    
                 </section>
                 <section>
                     <div id="app-2">
@@ -62,28 +48,12 @@
                             Metti su il mouse e vedi il il titolo bindato!!!
                         </span>
                     </div>
-                    <script>
-                        var app2 = new Vue({
-                            el:'#app-2',
-                            data:{
-                            message: 'hai caricato questa pagina il' + new Date().toLocaleDateString()
-                            }
-                        })
-                    </script>
-                </section>
+                </section>    
                 <section>
                     <div id="app-3">
                         <h1>Esempio if</h1>
                         <p v-if="seen">Ora mi vedi</p>
                     </div>
-                    <script>
-                        var app3 = new Vue({
-                            el:'#app-3',
-                            data:{
-                                seen: true
-                            }
-                        })
-                    </script>
                 </section>
                 <section>
                     <div id="app-4">
@@ -94,18 +64,6 @@
                             </li>
                         </ol>
                     </div>
-                    <script>
-                        var app4 = new Vue({
-                            el:'#app-4',
-                            data:{
-                                todos:[
-                                    {text:'Impara il javascript!'},
-                                    {text:'Impara Vue'},
-                                    {text:'Costruisci qualcosa di spettacolare'},
-                                ]
-                            }
-                        })
-                    </script>
                 </section>
                 <section>
                     <div id="app-5">
@@ -113,24 +71,24 @@
                         <p>{{message}}</p>
                         <button v-on:click="reverseMessage">Inverti Testo</button>
                     </div>
-                    <script>
-                        var app5 = new Vue({
-                            el:'#app-5',
-                            data:{
-                                message: 'Ciao vue.js'
-                            },
-                            methods:{
-                                reverseMessage:function(){
-                                    this.message = this.message.split('').reverse().join('')
-                                }
-                            }
-                        })
-                    </script>
                 </section>
+                <section>
+                    <h1>Components</h1>
+                    <div id="app-7">
+                            <ol>
+                              <todo-item
+                                v-for="item in groceryList"
+                                v-bind:todo="item"
+                                v-bind:key="item.id">
+                              </todo-item>
+                            </ol>
+                          </div>
+                </section> 
             </main>
             <footer>
 
             </footer>
-
+            <script src="build/app.js"></script>
+            
     </body>
 </html>
