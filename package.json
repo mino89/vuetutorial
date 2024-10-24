@@ -16,7 +16,7 @@
   },
   "homepage": "https://github.com/mino89/vuetutorial#readme",
   "dependencies": {
-    "vue": "^2.4.4"
+    "vue": "^3.0.0"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
